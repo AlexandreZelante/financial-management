@@ -18,7 +18,7 @@ Esse sistema consiste num gerenciador de finanças, onde você pode cadastrar to
 
 3. Crie um banco de dados com o nome desejado, e o modifique no arquivo *ormconfig.json* no campo "database" para que seja o mesmo.
 
-3. No diretório raíz do projeto, instale as dependências.
+4. No diretório raíz do projeto, instale as dependências.
 
 ```
   // Com Yarn
@@ -28,16 +28,26 @@ Esse sistema consiste num gerenciador de finanças, onde você pode cadastrar to
   npm install
 ```
 
-4. Caso sua porta do PostgreSQL for diferente de 5432, modifique no arquivo *ormconfig.json* , para que o TypeORM consiga se comunicar com seu banco de dados.
+5. Caso sua porta do PostgreSQL for diferente de 5432, modifique no arquivo *ormconfig.json* , para que o TypeORM consiga se comunicar com seu banco de dados.
 
-5. Por fim vamos executar nosso projeto.
+6. Execute as Migrations
 
 ```
   // Com Yarn
-  yarn start
+  yarn typeorm migration:run
 
   //Com NPM
-  npm start
+  npx typeorm migration:run
+```
+
+7. Por fim vamos executar nosso projeto.
+
+```
+  // Com Yarn
+  yarn dev:server
+
+  //Com NPM
+  npm run dev:server
 ```
 
 ## Documentação
